@@ -70,7 +70,7 @@ Player :: struct {
 // this is probably what gets sent over when all players are ready, and the server sets up the thing
 // then a countdown occurs and when it reaches zero then the server sends out the game states.
 // and the game begins.
-Coop_Configure_Game :: struct { // or Configure_Coop_Game?
+Coop_Game_Settings :: struct { // or Configure_Coop_Game?
     board_width:       s32 = 16;
     board_height:      s32 = 16;
     mine_percentage:   float32 = 20.0;
@@ -88,6 +88,14 @@ Coop_Configuration :: struct {
     board_height:      s32 = 16;
     mine_percentage:   float32 = 20.0;
     no_guess_solvable: bool = false;
+}
+
+Pregenerated_Board :: struct {
+    width : s32;
+    height : s32;
+    safe_start_row : s32 = -1;
+    safe_start_col : s32 = -1;
+    cells : [..] Cell;
 }
 
 
