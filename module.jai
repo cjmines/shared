@@ -4,6 +4,7 @@ MAX_CLIENTS :: 8;
 #import "Hash_Table";
 #import "game_logic";
 
+#import "tbx/serialize";
 
 register_client_server_structs :: () {
     add_type(*types, Coop_Client_Update);
