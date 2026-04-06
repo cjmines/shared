@@ -28,10 +28,8 @@ Client_Update :: struct {
     mouse_grid_space_y : float32;
 
     open_cell_pressed : bool;
-    open_all_adjacent_cells_pressed : bool;
 
     flag_cell_pressed : bool;
-    flag_all_adjacent_cells_pressed : bool;
 }
 
 // this shouldn't exist here, but instead in the coordinator program that creates rooms.
@@ -107,7 +105,7 @@ Pregenerated_Board :: struct {
 
 Coop_Game_Update :: struct {
     // we have to send this to update the mines that have been flagged or opened by other characters
-    board : [..] Cell_State;
+    cell_states : [..] Cell_State;
     client_id_to_player : Table(u32, Coop_Player);
 }
 
