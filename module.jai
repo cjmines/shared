@@ -57,6 +57,10 @@ Coop_Client_Update :: struct {
     using ci : Client_Update;
 }
 
+Client_Id_Response :: struct {
+    client_id : u32;
+}
+
 
 Infrequent_Client_Update :: struct {
     messages : [..] string;
@@ -78,7 +82,7 @@ Coop_Game_Settings :: struct { // or Configure_Coop_Game?
     board_width:       s32 = 16;
     board_height:      s32 = 16;
     mine_percentage:   float32 = 20.0;
-    no_guess_solvable: bool = false;
+    no_guess_solvable: bool = true;
     timed:             bool = false;
     best_of_n:         s32 = 3;
 }
