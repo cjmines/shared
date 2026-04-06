@@ -8,7 +8,7 @@ MAX_CLIENTS :: 8;
 
 register_client_server_structs :: () {
     add_type(*types, Coop_Client_Update);
-    add_type(*types, Infrequent_Client_Update);
+    add_type(*types, Infrequent_Coop_Client_Update);
 
     add_type(*types, Coop_Game_Update);
     add_type(*types, Infrequent_Coop_Game_Update);
