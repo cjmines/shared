@@ -13,6 +13,8 @@ register_client_server_structs :: () {
     add_type(*types, Coop_Game_Update);
     add_type(*types, Infrequent_Coop_Game_Update);
 
+    add_type(*types, Client_Id_Response);
+
     add_type(*types, Pregenerated_Board);
 }
 
