@@ -55,6 +55,14 @@ Game_Setup :: struct {
 }
 
 
+Coop_Game_State :: enum {
+    READY_UP;
+    PRE_GAME; // 3 2 1 type thing.
+    LIVE;
+    WON;
+    LOST;
+}
+
 Coop_Client_Update :: struct {
     using ci : Client_Update;
 }
@@ -122,6 +130,7 @@ Infrequent_Coop_Player :: struct {
 }
 
 Infrequent_Coop_Game_Update :: struct {
+    game_state : Game_State;
     client_id_to_player : Table(u32, Infrequent_Coop_Player);
 }
 
