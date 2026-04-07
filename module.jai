@@ -125,6 +125,8 @@ Coop_Game_Update :: struct {
 
 
 Infrequent_Coop_Player :: struct {
+    username : string;
+    initials : string;
     ready : bool;
     ping : u32;
 }
