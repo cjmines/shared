@@ -130,7 +130,7 @@ Infrequent_Coop_Player :: struct {
 }
 
 Infrequent_Coop_Game_Update :: struct {
-    game_state : Game_State;
+    game_state : Coop_Game_State;
     client_id_to_player : Table(u32, Infrequent_Coop_Player);
 }
 
