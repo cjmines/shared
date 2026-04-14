@@ -3,6 +3,7 @@ MAX_CLIENTS :: 8;
 
 #import "Hash_Table";
 #import "game_logic";
+#import "directory_packets";
 
 #import "tbx/serialize";
 
@@ -16,12 +17,6 @@ register_client_server_structs :: () {
     add_type(*types, Client_Id_Response);
 
     add_type(*types, Pregenerated_Board);
-}
-
-Game_Mode :: enum {
-    COOP;
-    TEAMS;
-    FREE_FOR_ALL;
 }
 
 
@@ -48,6 +43,7 @@ Create_Room_Request :: struct {
 Game_Setup :: struct {
     board_width:       s32 = 16;
     board_height:      s32 = 16;
+    mine_count : s32;
     mine_percentage:   float32 = 20.0;
     no_guess_solvable: bool = false;
     timed:             bool = false;
@@ -85,17 +81,6 @@ Player :: struct {
     mouse_grid_space_y : float32;
 }
 
-// this is probably what gets sent over when all players are ready, and the server sets up the thing
-// then a countdown occurs and when it reaches zero then the server sends out the game states.
-// and the game begins.
-Coop_Game_Settings :: struct { // or Configure_Coop_Game?
-    board_width:       s32 = 16;
-    board_height:      s32 = 16;
-    mine_percentage:   float32 = 20.0;
-    no_guess_solvable: bool = true;
-    timed:             bool = false;
-    best_of_n:         s32 = 3;
-}
 
 Coop_Player :: struct {
     using #as ps : Player;
