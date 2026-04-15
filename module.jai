@@ -21,7 +21,7 @@ register_client_server_structs :: () {
 
 
 Client_Update :: struct {
-    number : u32 := 0;
+    number : u32 = 0;
 
     mouse_grid_space_x : float32;
     mouse_grid_space_y : float32;
