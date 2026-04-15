@@ -21,6 +21,8 @@ register_client_server_structs :: () {
 
 
 Client_Update :: struct {
+    number : u32 := 0;
+
     mouse_grid_space_x : float32;
     mouse_grid_space_y : float32;
 
@@ -60,7 +62,7 @@ Coop_Game_State :: enum {
 }
 
 Coop_Client_Update :: struct {
-    using ci : Client_Update;
+    updates : [..] Client_Update;
 }
 
 Client_Id_Response :: struct {
@@ -84,6 +86,7 @@ Player :: struct {
 
 Coop_Player :: struct {
     using #as ps : Player;
+    last_processed_client_input_number : u32;
 }
 
 Coop_Configuration :: struct {
