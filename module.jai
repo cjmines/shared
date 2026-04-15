@@ -6,6 +6,7 @@ MAX_CLIENTS :: 8;
 #import "directory_packets";
 
 #import "tbx/serialize";
+#import "tbx/temporal_binary_switch";
 
 register_client_server_structs :: () {
     add_type(*types, Coop_Client_Update);
