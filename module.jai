@@ -89,8 +89,8 @@ Coop_Player :: struct {
     last_processed_client_input_number : u32;
     
     // so this might not be the best approach, but it allows our reconciliation to be simpler, so we're doing that for now.
-    open_tbs : Temporal_Binary_Switch;
-    flag_tbs : Temporal_Binary_Switch;
+    open_tbs := Temporal_Binary_Switch.{state_update_method = .IMMEDIATE};
+    flag_tbs := Temporal_Binary_Switch.{state_update_method = .IMMEDIATE};
 }
 
 Coop_Configuration :: struct {
