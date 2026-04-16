@@ -55,7 +55,7 @@ Game_Setup :: struct {
 
 
 Coop_Game_State :: enum {
-    READY_UP;
+    // no ready up game state because readying up occurs in the server creation lobby
     PRE_GAME; // 3 2 1 type thing.
     LIVE;
     WON;
