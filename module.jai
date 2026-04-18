@@ -101,6 +101,8 @@ Coop_Configuration :: struct {
     no_guess_solvable: bool = false;
 }
 
+// this exists because it contains  the board we send in the coop game update plus stuff that you only need once.
+// in the future it might be easier just remove this and just send everything every time in the game update but it is a waste.
 Pregenerated_Board :: struct {
     width : s32;
     height : s32;
